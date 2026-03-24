@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objetivo | BomCorpo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="protegerPagina()">
+
+<nav class="navbar">
+  <h1 class="logo">Bom<span>Corpo</span></h1>
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="objetivo.html">Objetivo</a></li>
+    <li><a href="questionario.html">Questionário</a></li>
+    <li><a href="resultado.html">Resultado</a></li>
+  </ul>
+</nav>
+
+<section class="section escolha-container">
+  <div class="texto centralizado">
+    <p class="tag">Etapa 1 • Meta principal</p>
+    <h2>Escolha seu <span class="destaque">Objetivo</span></h2>
+    <div class="linha centralizada"></div>
+    <p class="desc-doencas">
+      Selecione a meta que melhor representa o seu foco atual.
+    </p>
+
+    <div class="cards-doencas">
+      <div class="card-coracao card-doenca objetivo-card" onclick="selecionarObjetivo('Emagrecer')">
+        <h3>Emagrecer</h3>
+        <p>Reduzir gordura corporal com foco em saúde, déficit calórico e rotina ativa.</p>
+      </div>
+
+      <div class="card-coracao card-doenca objetivo-card" onclick="selecionarObjetivo('Ganhar massa')">
+        <h3>Ganhar massa</h3>
+        <p>Aumentar massa muscular com treino de força e alimentação adequada.</p>
+      </div>
+
+      <div class="card-coracao card-doenca objetivo-card" onclick="selecionarObjetivo('Manter peso')">
+        <h3>Manter peso</h3>
+        <p>Preservar o equilíbrio corporal com hábitos saudáveis e rotina estável.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

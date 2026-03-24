@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questionário | BomCorpo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="protegerPagina()">
+
+<nav class="navbar">
+  <h1 class="logo">
+  <a href="index.html">Bom<span>Corpo</span></a>
+</h1>
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="objetivo.html">Objetivo</a></li>
+    <li><a href="questionario.html">Questionário</a></li>
+    <li><a href="resultado.html">Resultado</a></li>
+  </ul>
+</nav>
+
+<section class="section auth-container">
+  <div class="texto auth-texto">
+    <p class="tag">Etapa 2 • Questionário</p>
+    <h2>Preencha seus <span class="destaque">Dados</span></h2>
+    <div class="linha"></div>
+
+    <form class="auth-form" onsubmit="salvarQuestionario(event)">
+      <div class="input-group">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" required>
+      </div>
+
+      <div class="input-group">
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" required>
+      </div>
+
+      <div class="input-group">
+        <label for="sexo">Sexo</label>
+        <select id="sexo" required>
+          <option value="">Selecione</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="altura">Altura (cm)</label>
+        <input type="number" id="altura" required>
+      </div>
+
+      <div class="input-group">
+        <label for="peso">Peso (kg)</label>
+        <input type="number" id="peso" step="0.1" required>
+      </div>
+
+      <div class="input-group">
+        <label for="atividade">Nível de atividade física</label>
+        <select id="atividade" required>
+          <option value="">Selecione</option>
+          <option value="1.2">Sedentário</option>
+          <option value="1.375">Leve</option>
+          <option value="1.55">Moderado</option>
+          <option value="1.725">Intenso</option>
+        </select>
+      </div>
+
+      <div class="botoes">
+        <button type="submit" class="btn">Gerar Resultado</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

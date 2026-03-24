@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultado | BomCorpo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="mostrarResultado()">
+
+<nav class="navbar">
+  <h1 class="logo">
+  <a href="index.html">Bom<span>Corpo</span></a>
+</h1>
+  <ul>
+    <li><a href="index.html">Início</a></li>
+    <li><a href="login.html">Login</a></li>
+    <li><a href="objetivo.html">Objetivo</a></li>
+    <li><a href="questionario.html">Questionário</a></li>
+    <li><a href="resultado.html">Resultado</a></li>
+  </ul>
+</nav>
+
+<section class="doencas-container">
+  <p class="tag">Etapa 3 • Resultado personalizado</p>
+  <h2>Seu <span class="destaque">Plano</span></h2>
+  <div class="linha centralizada"></div>
+
+  <div class="cards-doencas">
+    <div class="card-coracao card-doenca">
+      <h3>Perfil</h3>
+      <p id="perfilResultado"></p>
+    </div>
+
+    <div class="card-coracao card-doenca">
+      <h3>IMC</h3>
+      <p id="imcResultado"></p>
+    </div>
+
+    <div class="card-coracao card-doenca">
+      <h3>Calorias</h3>
+      <p id="caloriasResultado"></p>
+    </div>
+
+    <div class="card-coracao card-doenca">
+      <h3>Dieta</h3>
+      <p id="dietaResultado"></p>
+    </div>
+
+    <div class="card-coracao card-doenca">
+      <h3>Treino</h3>
+      <p id="treinoResultado"></p>
+    </div>
+  </div>
+
+  <div class="botoes" style="justify-content:center; margin-top: 30px;">
+    <button class="btn" onclick="window.location.href='questionario.html'">Refazer avaliação</button>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuração Inicial | BomCorpo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="protegerPagina()">
+
+<nav class="navbar">
+  <h1 class="logo">
+    <a href="inicio.html">Bom<span>Corpo</span></a>
+  </h1>
+</nav>
+
+<section class="section auth-container">
+  <div class="texto auth-texto">
+    <p class="tag">Configuração inicial</p>
+    <h2>Monte seu <span class="destaque">Perfil</span></h2>
+    <div class="linha"></div>
+
+    <p class="desc">
+      Informe seus dados para que o sistema gere treino, dieta e acompanhamento personalizados.
+    </p>
+
+    <form class="auth-form" onsubmit="salvarOnboarding(event)">
+      <div class="input-group">
+        <label for="objetivo">Objetivo</label>
+        <select id="objetivo" required>
+          <option value="">Selecione</option>
+          <option value="Emagrecer">Emagrecer</option>
+          <option value="Ganhar massa">Ganhar massa</option>
+          <option value="Manter peso">Manter peso</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" required>
+      </div>
+
+      <div class="input-group">
+        <label for="sexo">Sexo</label>
+        <select id="sexo" required>
+          <option value="">Selecione</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Feminino">Feminino</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="altura">Altura (cm)</label>
+        <input type="number" id="altura" required>
+      </div>
+
+      <div class="input-group">
+        <label for="peso">Peso (kg)</label>
+        <input type="number" id="peso" step="0.1" required>
+      </div>
+
+      <div class="input-group">
+        <label for="atividade">Nível de atividade física</label>
+        <select id="atividade" required>
+          <option value="">Selecione</option>
+          <option value="1.2">Sedentário</option>
+          <option value="1.375">Leve</option>
+          <option value="1.55">Moderado</option>
+          <option value="1.725">Intenso</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label for="treinosSemana">Quantas vezes quer treinar por semana?</label>
+        <select id="treinosSemana" required>
+          <option value="">Selecione</option>
+          <option value="2">2 vezes</option>
+          <option value="3">3 vezes</option>
+          <option value="4">4 vezes</option>
+          <option value="5">5 vezes</option>
+          <option value="6">6 vezes</option>
+        </select>
+      </div>
+
+      <div class="botoes">
+        <button type="submit" class="btn">Salvar e continuar</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

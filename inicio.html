@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Início | BomCorpo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="protegerPagina(); carregarInicio(); renderizarFoguinhos();">
+
+<nav class="navbar">
+  <h1 class="logo">
+    <a href="inicio.html">Bom<span>Corpo</span></a>
+  </h1>
+  <ul>
+    <li><a href="inicio.html">Início</a></li>
+    <li><a href="treinos.html">Treinos</a></li>
+    <li><a href="dieta.html">Plano alimentar</a></li>
+    <li><a href="progresso.html">Progresso</a></li>
+    <li><a href="perfil.html">Perfil</a></li>
+  </ul>
+</nav>
+
+<section class="doencas-container dashboard-top">
+  <p class="tag">Painel principal</p>
+  <h2>Olá, <span class="destaque" id="nomeUsuarioInicio">Usuário</span></h2>
+  <div class="linha centralizada"></div>
+
+  <p class="desc-doencas">
+    Acompanhe seu plano, seus treinos da semana e sua consistência.
+  </p>
+
+  <div class="cards-doencas">
+    <div class="card-coracao card-doenca">
+      <h3>Objetivo</h3>
+      <p id="objetivoInicio"></p>
+    </div>
+
+    <div class="card-coracao card-doenca">
+      <h3>IMC</h3>
+      <p id="imcInicio"></p>
+    </div>
+
+    <div class="card-coracao card-doenca">
+      <h3>Calorias</h3>
+      <p id="caloriasInicio"></p>
+    </div>
+
+    <div class="card-coracao card-doenca">
+      <h3>Frequência</h3>
+      <p id="frequenciaInicio"></p>
+    </div>
+  </div>
+</section>
+
+<section class="prevencao-section">
+  <h2>Treino de hoje</h2>
+  <div class="linha centralizada"></div>
+
+  <div class="alerta-box">
+    <h3 id="treinoHojeTitulo">Seu treino do dia</h3>
+    <p id="treinoHojeTexto"></p>
+
+    <div class="botoes central-botoes">
+      <button class="btn" onclick="marcarTreinoHoje()">Marcar treino como concluído</button>
+    </div>
+  </div>
+</section>
+
+<section class="formulario-section">
+  <h2>Consistência semanal</h2>
+  <div class="linha centralizada"></div>
+
+  <p class="form-text">
+    O foguinho acende nos dias em que você marcou treino concluído.
+  </p>
+
+  <div class="fogo-grid" id="fogoGrid"></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
