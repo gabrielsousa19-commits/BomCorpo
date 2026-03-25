@@ -6,7 +6,7 @@
   <title>Progresso | BomCorpo</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body onload="protegerPagina(); carregarProgresso(); renderizarFoguinhos();">
+<body onload="protegerPagina(); carregarProgressoNovo(); renderizarFoguinhos(); atualizarPainelStreak();">
 
 <nav class="navbar">
   <h1 class="logo">
@@ -21,38 +21,92 @@
   </ul>
 </nav>
 
-<section class="doencas-container">
-  <p class="tag">Acompanhamento</p>
-  <h2>Seu <span class="destaque">Progresso</span></h2>
-  <div class="linha centralizada"></div>
+<section class="progresso-page">
 
-  <div class="cards-doencas">
-    <div class="card-coracao card-doenca">
-      <h3>IMC atual</h3>
-      <p id="progressoImc"></p>
+  <div class="progresso-header">
+    <p class="tag">Acompanhamento</p>
+    <h2>Seu <span class="destaque">Progresso</span></h2>
+    <div class="linha"></div>
+    <p class="desc-doencas" id="progressoResumo">
+      Acompanhe sua evolução, sua consistência semanal e seu desempenho no plano.
+    </p>
+  </div>
+
+  <div class="progresso-top-grid">
+
+    <div class="progresso-resumo-card">
+      <p class="tag">Visão geral</p>
+      <h3>Seu desempenho atual</h3>
+
+      <div class="resumo-cards-grid">
+        <div class="resumo-mini-card">
+          <span>⚖️ IMC atual</span>
+          <strong id="progressoImc"></strong>
+        </div>
+
+        <div class="resumo-mini-card">
+          <span>📋 Classificação</span>
+          <strong id="progressoClassificacao"></strong>
+        </div>
+
+        <div class="resumo-mini-card">
+          <span>🏋️ Treinos feitos</span>
+          <strong id="treinosFeitosTexto"></strong>
+        </div>
+
+        <div class="resumo-mini-card">
+          <span>📅 Frequência semanal</span>
+          <strong id="progressoFrequencia"></strong>
+        </div>
+      </div>
     </div>
 
-    <div class="card-coracao card-doenca">
-      <h3>Classificação</h3>
-      <p id="progressoClassificacao"></p>
+    <div class="progresso-meta-card">
+      <p class="tag">Meta da semana</p>
+      <h3>Seu avanço semanal</h3>
+
+      <div class="progresso-meta-info">
+        <div class="mini-status">
+          <span>🔥 Sequência atual</span>
+          <strong id="sequenciaAtual"></strong>
+        </div>
+
+        <div class="mini-status">
+          <span>🏆 Recorde</span>
+          <strong id="recordeSequencia"></strong>
+        </div>
+      </div>
+
+      <div class="barra-progresso-area">
+        <div class="barra-progresso-fundo">
+          <div class="barra-progresso-preenchida" id="barraProgresso"></div>
+        </div>
+        <p class="barra-label" id="percentualSemanal"></p>
+      </div>
+
+      <div class="consistencia-meta">
+        <span id="metaSemanalTexto"></span>
+      </div>
     </div>
 
-    <div class="card-coracao card-doenca">
-      <h3>Treinos feitos</h3>
-      <p id="treinosFeitosTexto"></p>
+  </div>
+
+  <div class="progresso-consistencia-card">
+    <div class="consistencia-topo">
+      <div>
+        <p class="tag">Consistência semanal</p>
+        <h3>Foguinho da semana</h3>
+      </div>
     </div>
 
-    <div class="card-coracao card-doenca">
-      <h3>Frequência semanal</h3>
-      <p id="progressoFrequencia"></p>
+    <div class="fogo-grid" id="fogoGrid"></div>
+
+    <div class="mensagem-streak-card">
+      <h4>Resumo da semana</h4>
+      <p id="mensagemStreak"></p>
     </div>
   </div>
-</section>
 
-<section class="formulario-section">
-  <h2>Foguinho da semana</h2>
-  <div class="linha centralizada"></div>
-  <div class="fogo-grid" id="fogoGrid"></div>
 </section>
 
 <script src="script.js"></script>

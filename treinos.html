@@ -6,7 +6,7 @@
   <title>Treinos | BomCorpo</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body onload="protegerPagina(); carregarTreinos();">
+<body onload="protegerPagina(); carregarTreinosNovo();">
 
 <nav class="navbar">
   <h1 class="logo">
@@ -21,14 +21,71 @@
   </ul>
 </nav>
 
-<section class="doencas-container">
-  <p class="tag">Plano semanal</p>
-  <h2>Seus <span class="destaque">Treinos</span></h2>
-  <div class="linha centralizada"></div>
+<section class="treinos-page">
 
-  <p class="desc-doencas" id="treinosResumo"></p>
+  <div class="treinos-header">
+    <p class="tag">Plano semanal</p>
+    <h2>Seus <span class="destaque">Treinos</span></h2>
+    <div class="linha"></div>
+    <p class="desc-doencas" id="treinosResumo"></p>
+  </div>
 
-  <div class="cards-doencas" id="treinosLista"></div>
+  <div class="treinos-top-grid">
+
+    <div class="treinos-resumo-card">
+      <p class="tag">Resumo do plano</p>
+      <h3>Seu planejamento atual</h3>
+
+      <div class="treinos-resumo-grid">
+        <div class="resumo-mini-card">
+          <span>🎯 Objetivo</span>
+          <strong id="treinoObjetivo"></strong>
+        </div>
+
+        <div class="resumo-mini-card">
+          <span>📅 Frequência</span>
+          <strong id="treinoFrequencia"></strong>
+        </div>
+
+        <div class="resumo-mini-card">
+          <span>🏋️ Divisão</span>
+          <strong id="treinoDivisao"></strong>
+        </div>
+
+        <div class="resumo-mini-card">
+          <span>🔥 Foco</span>
+          <strong id="treinoFoco"></strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="treino-destaque-card">
+      <p class="tag">Treino recomendado de hoje</p>
+      <h3 id="treinoHojeNome">Treino A</h3>
+      <p id="treinoHojeDesc">Descrição do treino do dia.</p>
+
+      <div class="treino-destaque-info">
+        <div class="mini-status">
+          <span>Dia atual</span>
+          <strong id="treinoHojeDia"></strong>
+        </div>
+
+        <div class="mini-status">
+          <span>Status</span>
+          <strong>Pronto para executar</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="treinos-semana-header">
+    <p class="tag">Plano completo</p>
+    <h3>Treinos da semana</h3>
+  </div>
+
+  <div class="treinos-semana-grid" id="treinosLista"></div>
+
 </section>
 
 <script src="script.js"></script>

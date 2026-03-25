@@ -6,7 +6,7 @@
   <title>Plano Alimentar | BomCorpo</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body onload="protegerPagina(); carregarDieta();">
+<body onload="protegerPagina(); carregarDietaNova();">
 
 <nav class="navbar">
   <h1 class="logo">
@@ -21,42 +21,91 @@
   </ul>
 </nav>
 
-<section class="doencas-container">
-  <p class="tag">Nutrição personalizada</p>
-  <h2>Plano <span class="destaque">Alimentar</span></h2>
-  <div class="linha centralizada"></div>
+<section class="dieta-page">
 
-  <div class="cards-doencas">
-    <div class="card-coracao card-doenca">
-      <h3>Meta calórica</h3>
-      <p id="metaCalorica"></p>
-    </div>
+  <div class="dieta-header">
+    <p class="tag">Nutrição personalizada</p>
+    <h2>Plano <span class="destaque">Alimentar</span></h2>
+    <div class="linha"></div>
+    <p class="desc-doencas" id="dietaResumo"></p>
+  </div>
 
-    <div class="card-coracao card-doenca">
-      <h3>Estratégia</h3>
+  <div class="dieta-top-grid">
+
+    <div class="dieta-estrategia-card">
+      <p class="tag">Estratégia nutricional</p>
+      <h3 id="estrategiaTitulo">Seu plano atual</h3>
       <p id="estrategiaDieta"></p>
+
+      <div class="dieta-destaques">
+        <div class="mini-status">
+          <span>🔥 Meta calórica</span>
+          <strong id="metaCalorica"></strong>
+        </div>
+
+        <div class="mini-status">
+          <span>🎯 Objetivo</span>
+          <strong id="objetivoDieta"></strong>
+        </div>
+      </div>
     </div>
 
-    <div class="card-coracao card-doenca">
-      <h3>Café da manhã</h3>
+    <div class="dieta-info-card">
+      <p class="tag">Dicas rápidas</p>
+      <h3>Recomendações gerais</h3>
+
+      <div class="resumo-cards-grid">
+        <div class="resumo-mini-card">
+          <span>💧 Hidratação</span>
+          <strong id="aguaDieta"></strong>
+        </div>
+
+        <div class="resumo-mini-card">
+          <span>🥚 Proteína</span>
+          <strong id="proteinaDieta"></strong>
+        </div>
+
+        <div class="resumo-mini-card">
+          <span>⏰ Frequência</span>
+          <strong id="frequenciaRefeicoes"></strong>
+        </div>
+
+        <div class="resumo-mini-card">
+          <span>🍽️ Estilo</span>
+          <strong id="estiloDieta"></strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="dieta-refeicoes-header">
+    <p class="tag">Plano diário</p>
+    <h3>Refeições sugeridas</h3>
+  </div>
+
+  <div class="dieta-refeicoes-grid">
+    <div class="dieta-refeicao-card">
+      <h4>☀️ Café da manhã</h4>
       <p id="cafeManha"></p>
     </div>
 
-    <div class="card-coracao card-doenca">
-      <h3>Almoço</h3>
+    <div class="dieta-refeicao-card">
+      <h4>🍛 Almoço</h4>
       <p id="almoco"></p>
     </div>
 
-    <div class="card-coracao card-doenca">
-      <h3>Lanche</h3>
+    <div class="dieta-refeicao-card">
+      <h4>🍎 Lanche</h4>
       <p id="lanche"></p>
     </div>
 
-    <div class="card-coracao card-doenca">
-      <h3>Jantar</h3>
+    <div class="dieta-refeicao-card">
+      <h4>🌙 Jantar</h4>
       <p id="jantar"></p>
     </div>
   </div>
+
 </section>
 
 <script src="script.js"></script>

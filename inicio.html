@@ -6,7 +6,7 @@
   <title>Início | BomCorpo</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body onload="protegerPagina(); carregarInicio(); renderizarFoguinhos();">
+<body onload="protegerPagina(); carregarInicioNovo(); renderizarFoguinhos(); atualizarPainelStreak();">
 
 <nav class="navbar">
   <h1 class="logo">
@@ -21,63 +21,126 @@
   </ul>
 </nav>
 
-<section class="doencas-container dashboard-top">
-  <p class="tag">Painel principal</p>
-  <h2>Olá, <span class="destaque" id="nomeUsuarioInicio">Usuário</span></h2>
-  <div class="linha centralizada"></div>
+<section class="dashboard-home">
 
-  <p class="desc-doencas">
-    Acompanhe seu plano, seus treinos da semana e sua consistência.
-  </p>
+  <div class="dashboard-hero">
+    <div class="dashboard-hero-text">
+      <p class="tag">Painel principal</p>
+      <h2>Olá, <span class="destaque" id="nomeUsuarioInicio">Usuário</span></h2>
+      <div class="linha"></div>
 
-  <div class="cards-doencas">
-    <div class="card-coracao card-doenca">
-      <h3>Objetivo</h3>
-      <p id="objetivoInicio"></p>
-    </div>
+      <p class="dashboard-sub" id="fraseDashboard">
+        Seu plano foi montado com base no seu perfil e no seu objetivo.
+      </p>
 
-    <div class="card-coracao card-doenca">
-      <h3>IMC</h3>
-      <p id="imcInicio"></p>
-    </div>
+      <div class="dashboard-badges">
+        <div class="dashboard-badge">
+          <span>🎯 Objetivo</span>
+          <strong id="objetivoInicio"></strong>
+        </div>
 
-    <div class="card-coracao card-doenca">
-      <h3>Calorias</h3>
-      <p id="caloriasInicio"></p>
-    </div>
+        <div class="dashboard-badge">
+          <span>🏋️ Frequência</span>
+          <strong id="frequenciaInicio"></strong>
+        </div>
 
-    <div class="card-coracao card-doenca">
-      <h3>Frequência</h3>
-      <p id="frequenciaInicio"></p>
-    </div>
-  </div>
-</section>
-
-<section class="prevencao-section">
-  <h2>Treino de hoje</h2>
-  <div class="linha centralizada"></div>
-
-  <div class="alerta-box">
-    <h3 id="treinoHojeTitulo">Seu treino do dia</h3>
-    <p id="treinoHojeTexto"></p>
-
-    <div class="botoes central-botoes">
-      <button class="btn" onclick="marcarTreinoHoje()">Marcar treino como concluído</button>
+        <div class="dashboard-badge">
+          <span>📈 Meta semanal</span>
+          <strong id="metaSemanalHero"></strong>
+        </div>
+      </div>
     </div>
   </div>
-</section>
 
-<section class="formulario-section">
-  <h2>Consistência semanal</h2>
-  <div class="linha centralizada"></div>
+  <div class="dashboard-grid-principal">
 
-  <p class="form-text">
-    O foguinho acende nos dias em que você marcou treino concluído.
-  </p>
+    <div class="treino-hoje-card">
+      <div class="treino-hoje-topo">
+        <p class="tag">Seu foco de hoje</p>
+        <h3>Treino de hoje</h3>
+      </div>
 
-  <div class="fogo-grid" id="fogoGrid"></div>
+      <div class="treino-hoje-conteudo">
+        <h2 id="treinoHojeTitulo">Treino A</h2>
+        <p id="treinoHojeTexto">Descrição do treino</p>
+      </div>
+
+      <div class="treino-hoje-extra">
+        <div class="mini-status">
+          <span>🔥 Sequência</span>
+          <strong id="sequenciaAtual"></strong>
+        </div>
+
+        <div class="mini-status">
+          <span>🏆 Recorde</span>
+          <strong id="recordeSequencia"></strong>
+        </div>
+      </div>
+
+      <div class="botoes">
+        <button class="btn" onclick="marcarTreinoHoje()">Marcar treino como concluído</button>
+      </div>
+    </div>
+
+    <div class="resumo-plano-card">
+      <p class="tag">Resumo do plano</p>
+      <h3>Seus dados principais</h3>
+
+      <div class="resumo-cards-grid">
+        <div class="resumo-mini-card">
+          <span>⚖️ IMC</span>
+          <strong id="imcInicio"></strong>
+        </div>
+
+        <div class="resumo-mini-card">
+          <span>🔥 Calorias</span>
+          <strong id="caloriasInicio"></strong>
+        </div>
+
+        <div class="resumo-mini-card">
+          <span>📅 Treinos/semana</span>
+          <strong id="frequenciaResumo"></strong>
+        </div>
+
+        <div class="resumo-mini-card">
+          <span>🎯 Objetivo</span>
+          <strong id="objetivoResumo"></strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="consistencia-card">
+    <div class="consistencia-topo">
+      <div>
+        <p class="tag">Consistência semanal</p>
+        <h3>Seu progresso da semana</h3>
+      </div>
+
+      <div class="consistencia-meta">
+        <span id="metaSemanalTexto"></span>
+      </div>
+    </div>
+
+    <div class="barra-progresso-area">
+      <div class="barra-progresso-fundo">
+        <div class="barra-progresso-preenchida" id="barraProgresso"></div>
+      </div>
+      <p class="barra-label" id="percentualSemanal"></p>
+    </div>
+
+    <div class="fogo-grid" id="fogoGrid"></div>
+
+    <div class="mensagem-streak-card">
+      <h4>Resumo da semana</h4>
+      <p id="mensagemStreak"></p>
+    </div>
+  </div>
+
 </section>
 
 <script src="script.js"></script>
 </body>
 </html>
+<body onload="protegerPagina(); carregarInicioNovo(); renderizarFoguinhos(); atualizarPainelStreak();"></body>

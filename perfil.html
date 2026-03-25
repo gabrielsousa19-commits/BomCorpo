@@ -6,7 +6,7 @@
   <title>Perfil | BomCorpo</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body onload="protegerPagina(); carregarPerfil();">
+<body onload="protegerPagina(); carregarPerfilNovo();">
 
 <nav class="navbar">
   <h1 class="logo">
@@ -21,46 +21,80 @@
   </ul>
 </nav>
 
-<section class="doencas-container">
-  <p class="tag">Conta do usuário</p>
-  <h2>Meu <span class="destaque">Perfil</span></h2>
-  <div class="linha centralizada"></div>
+<section class="perfil-page">
 
-  <div class="cards-doencas">
-    <div class="card-coracao card-doenca">
-      <h3>Nome</h3>
-      <p id="perfilNome"></p>
-    </div>
+  <div class="perfil-header">
+    <div class="perfil-avatar" id="perfilAvatar">U</div>
 
-    <div class="card-coracao card-doenca">
-      <h3>E-mail</h3>
-      <p id="perfilEmail"></p>
-    </div>
+    <div class="perfil-header-info">
+      <p class="tag">Conta do usuário</p>
+      <h2>Meu <span class="destaque">Perfil</span></h2>
+      <div class="linha"></div>
 
-    <div class="card-coracao card-doenca">
-      <h3>Objetivo</h3>
-      <p id="perfilObjetivo"></p>
-    </div>
-
-    <div class="card-coracao card-doenca">
-      <h3>Idade</h3>
-      <p id="perfilIdade"></p>
-    </div>
-
-    <div class="card-coracao card-doenca">
-      <h3>Altura e peso</h3>
-      <p id="perfilCorpo"></p>
-    </div>
-
-    <div class="card-coracao card-doenca">
-      <h3>Treinos por semana</h3>
-      <p id="perfilTreinos"></p>
+      <h3 id="perfilNomeTopo">Usuário</h3>
+      <p class="perfil-frase" id="perfilFrase">
+        Seu perfil de saúde e treino personalizado.
+      </p>
     </div>
   </div>
 
-  <div class="botoes central-botoes">
+  <div class="perfil-layout">
+
+    <div class="perfil-card perfil-card-grande">
+      <h3>Informações pessoais</h3>
+
+      <div class="perfil-info-lista">
+        <div class="perfil-info-item">
+          <span class="perfil-label">👤 Nome</span>
+          <p id="perfilNome"></p>
+        </div>
+
+        <div class="perfil-info-item">
+          <span class="perfil-label">📧 E-mail</span>
+          <p id="perfilEmail"></p>
+        </div>
+
+        <div class="perfil-info-item">
+          <span class="perfil-label">🎂 Data de nascimento</span>
+          <p id="perfilNascimento"></p>
+        </div>
+
+        <div class="perfil-info-item">
+          <span class="perfil-label">🕒 Idade</span>
+          <p id="perfilIdade"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="perfil-mini-cards">
+      <div class="perfil-card perfil-mini-card">
+        <h3>🎯 Objetivo</h3>
+        <p id="perfilObjetivo"></p>
+      </div>
+
+      <div class="perfil-card perfil-mini-card">
+        <h3>📏 Corpo</h3>
+        <p id="perfilCorpo"></p>
+      </div>
+
+      <div class="perfil-card perfil-mini-card">
+        <h3>🏋️ Treinos por semana</h3>
+        <p id="perfilTreinos"></p>
+      </div>
+
+      <div class="perfil-card perfil-mini-card">
+        <h3>⚡ Nível de atividade</h3>
+        <p id="perfilAtividade"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="perfil-acoes">
+    <button class="btn" onclick="window.location.href='onboarding.html'">Refazer avaliação</button>
     <button class="btn secundario" onclick="logout()">Sair da conta</button>
   </div>
+
 </section>
 
 <script src="script.js"></script>
