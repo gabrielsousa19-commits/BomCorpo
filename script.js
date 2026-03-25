@@ -37,9 +37,14 @@ function criarConta(event) {
     return;
   }
 
-  const usuario = { nome, email, senha };
-  salvarUsuario(usuario);
-  logar();
+  const usuario = {
+    nome,
+    email,
+    senha
+  };
+
+  localStorage.setItem("usuario", JSON.stringify(usuario));
+  localStorage.setItem("logado", "true");
 
   window.location.href = "onboarding.html";
 }
@@ -806,4 +811,93 @@ function gerarResumoProgresso(dados, treinosFeitos) {
   }
 
   return `Você já concluiu ${treinosFeitos} treino(s) nesta semana. Continue firme no objetivo de ${dados.objetivo.toLowerCase()}.`;
+}
+function salvarUsuario(usuario) {
+  localStorage.setItem("usuario", JSON.stringify(usuario));
+}
+
+function pegarUsuario() {
+  return JSON.parse(localStorage.getItem("usuario"));
+}
+
+function estaLogado() {
+  return localStorage.getItem("logado") === "true";
+}
+
+function logar() {
+  localStorage.setItem("logado", "true");
+}
+
+function protegerPagina() {
+  if (!estaLogado()) {
+    window.location.href = "login.html";
+  }
+}
+
+function criarConta(event) {
+  event.preventDefault();
+
+  const nome = document.getElementById("nome").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const senha = document.getElementById("senha").value.trim();
+
+  if (!nome || !email || !senha) {
+    alert("Preencha todos os campos.");
+    return;
+  }
+
+  const usuario = {
+    nome,
+    email,
+    senha
+  };
+
+  salvarUsuario(usuario);
+  logar();
+
+  window.location.href = "onboarding.html";
+}
+
+function fazerLogin(event) {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+  const senha = document.getElementById("senha").value.trim();
+
+  const usuario = pegarUsuario();
+
+  if (!usuario) {
+    alert("Nenhuma conta encontrada. Crie uma conta primeiro.");
+    return;
+  }
+
+  if (email === usuario.email && senha === usuario.senha) {
+    logar();
+
+    const dados = JSON.parse(localStorage.getItem("dadosSaude"));
+    if (dados) {
+      window.location.href = "inicio.html";
+    } else {
+      window.location.href = "onboarding.html";
+    }
+  } else {
+    alert("E-mail ou senha incorretos.");
+  }
+}
+
+function salvarOnboarding(event) {
+  event.preventDefault();
+
+  const dados = {
+    objetivo: document.getElementById("objetivo").value,
+    idade: Number(document.getElementById("idade").value),
+    sexo: document.getElementById("sexo").value,
+    altura: Number(document.getElementById("altura").value),
+    peso: Number(document.getElementById("peso").value),
+    atividade: Number(document.getElementById("atividade").value),
+    treinosSemana: Number(document.getElementById("treinosSemana").value)
+  };
+
+  localStorage.setItem("dadosSaude", JSON.stringify(dados));
+  window.location.href = "inicio.html";
 }
